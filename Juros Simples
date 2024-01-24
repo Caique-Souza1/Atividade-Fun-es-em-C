@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+float Juros(float C,float I, float T);
+
+int main() {
+    float C,I,T,M;
+    printf("Quer calcular Juros Simples?\nInforme:\nCapital Inicial:\n");
+    scanf("%f", &C);
+    printf("Taxa de Juros(Porcentagem):\n");
+    scanf("%f",&I);
+    printf("Periodo:\n");
+    scanf("%f",&T);
+    M=Juros(C,I,T);
+    printf("O Montante Final eh: %.2f",M);
+    return 0;
+}
+float Juros(float C, float I, float T){
+    float M;
+    M=(C*I*T)/100;
+    return M;
+}
