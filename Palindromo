@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int n,b=1;
+    char frase[128];
+    printf("Escreva uma Frase e o codigo ira dizer se eh um Palindromo ou Nao\n");
+    scanf(" %[^\n]", frase);
+    n=strlen(frase)-1;
+    for (int c=0;c<n;c++){
+        if(!(frase[c]==frase[n])){
+            b=0;
+        }
+        n-=1;
+    }
+    if(b==0)
+        printf("Nao eh Palindromo");
+    else
+        printf("Eh Palindromo");
+    return 0;
+}
