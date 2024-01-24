@@ -1,0 +1,62 @@
+#include <stdio.h>
+
+float atividades(int natp, int natf);
+float bimestre(float avs,float avp, float natv);
+float mediafinal(float BI1,float BI2,float BI3,float BI4);
+
+int main() {
+    float BI1,BI2,BI3,BI4,avs,avp,natv,mf;
+    int natf,natp;
+    for (int i=1;i<=4;i++){
+        if(i==1)
+            printf("Informe as notas das Atividades do Primeiro Bimestre:\nAvaliacao Escrita:\n");
+        else if(i==2)
+            printf("Informe as notas das Atividades do Segundo Bimestre:\nAvaliacao Escrita:\n");
+        else if(i==3)
+            printf("Informe as notas das Atividades do Terceiro Bimestre:\nAvaliacao Escrita:\n");
+        else if(i==4)
+        printf("Informe as notas de Atividades do Quarto Bimestre:\nAvaliacao Escrita:\n");
+    scanf("%f",&avs);
+    printf("Avaliacao Pratica:\n");
+    scanf("%f",&avp);
+    printf("Numero de Atividades Propostas pelo Professor:\n");
+    scanf("%d",&natp);
+    printf("Numero de Atividades Realizadas pelo Aluno:\n");
+    scanf("%d",&natf);
+    natv=atividades(natp,natf);
+        if(i==1)
+            BI1=bimestre(avs,avp,natv);
+        else if(i==2)
+            BI2=bimestre(avs,avp,natv);
+        else if(i==3)
+            BI3=bimestre(avs,avp,natv);
+        else if(i==4)
+            BI4=bimestre(avs,avp,natv);
+    }    
+    mf=mediafinal(BI1,BI2,BI3,BI4);
+    printf ("Medias dos Bimestre:\n");
+    printf ("Primeiro Bimestre: %.2f\n",BI1);
+    printf ("Segundo Bimestre: %.2f\n",BI2);
+    printf ("Terceiro Bimestre: %.2f\n",BI3);
+    printf ("Quarto Bimestre: %.2f\n",BI4);
+    printf ("Media Final: %.2f\n",mf);
+    return 0;
+}
+
+float atividades(int natp, int natf){
+    float natv;
+    natv=((float)natf/natp)*10;
+    return natv;
+}
+
+float bimestre (float avs,float avp, float natv){
+    float b;
+    b=(avs+avp+natv)/3;
+    return b;
+}
+
+float mediafinal(float BI1,float BI2,float BI3,float BI4){
+    float mf;
+    mf=(BI1*2+BI2*3+BI3*2+BI4*3)/10;
+    return mf;
+}
