@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+char geral[127],frase[300];
+int cont[127]={0};
+printf ("Escreva algo e o codigo ira contar os Caracteres\n");
+for (int c=33;c<=126;c++){
+    geral[c]=c;
+}
+fgets(frase,sizeof(frase),stdin);
+for (int c=0;c<strlen(frase);c++){
+    for (int i=33;i<=126;i++){
+        if (frase[c]==geral[i])
+            cont[i]=cont[i]+1;
+    }
+}
+for (int c=33;c<=126;c++){
+    printf("%c | %d\n",geral[c],cont[c]);
+}
+return 0;
+}
