@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char senha[50];
+    int numcar,b1,b2,b3,b4,b5;
+    fgets(senha, sizeof(senha), stdin);
+        if(strlen(senha)>=8)
+            b1=1;
+    for(int c=0;c<strlen(senha);c++){
+        if(senha[c]>96 && senha[c]<123)
+            b2=1;
+    }
+    for(int c=0;c<strlen(senha);c++){
+        if(senha[c]>64 && senha[c]<91)
+            b3=1;
+    }
+    for(int c=0;c<strlen(senha);c++){
+        if(senha[c]>47 && senha[c]<58)
+            b4=1;
+    }
+   for(int c=0;c<strlen(senha);c++){
+        if((senha[c]>31 && senha[c]<48) || (senha[c]>57 && senha[c]<65) || (senha[c]>90 && senha[c]<97) || (senha[c]>123 && senha[c]<127))
+            b5=1;
+    }
+    if(b1==1 && b2==1 && b3==1 && b4==1 && b5==1)
+        printf("Senha Valida\n");
+    else
+        printf("Senha Invalida\n");
+    
+    return 0;
+}
